@@ -1,28 +1,56 @@
+
+
 body{
-    background-color: #424242;
+    margin: 0;
+    background-color: #fffdd0;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
+.header{
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+}
 #board-wrapper{
     display: grid;
-    width: 20vw;
-    height: 35vh;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20vh;
+    grid-template-columns: repeat(3, 175px);
+    grid-template-rows: repeat(3, 175px);
+    width: 525px;
+    height: 525px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20vh;
 }
 
 .board-square{
-    background-color: grey;
-    border: 1px solid yellow;
+    background-color: #ebe56a;
+    border: 1px solid black;
     display: flex;
     align-content: center;
     justify-content: center;
 }
 
+.board-square:hover{
+    background-color: #f2ee8f;
+}
+
 .square-text{
-    color: white;
+    color: black;
     text-align: center;
     font-size: 3rem;
+}
+
+h2{
+    text-align: center;
+    font-size: 2rem;
+    color: red;
 }
