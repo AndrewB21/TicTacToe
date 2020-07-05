@@ -62,18 +62,22 @@ const gameController = ((players) => {
         //check for horizontal wins
         for (let i = 0; i < 9; i += 3){
             if(board[i] == board[i+1] && board[i] == board[i+2]){
-                return true;
+                return [i, i+1, i+2];
             }
         }
         //check for vertical wins
         for (let i = 0; i < 4; i++){
             if(board[i] == board[i+3] && board[i] == board[i+6]){
-                return true;
+                return [i, i+3, i+6];
             }
         }
         //check for diagonal wins
-        if((board[2] == board[4] && board[2] == board[6]) || (board[0] == board[4] && board[0] == board[8])){
-            return true;
+        if((board[2] == board[4] && board[2] == board[6])){
+            return [2, 4, 6]
+        }else if((board[0] == board[4] && board[0] == board[8])){
+            return [0, 4, 8];
+        }else{
+            return false;
         }
     }
 
@@ -90,9 +94,17 @@ const gameController = ((players) => {
             return;
         }else{
             gameboard.updateBoard(square, activePlayer.playerMark);
-            if(checkWin(gameboard.getBoard())){
-                winMessage.appendChild(document.createTextNode(`Game Over, ${activePlayer.name} wins!`));
+            winStatus = checkWin(gameboard.getBoard());
+            
+            if(winStatus){
+                winStatus.forEach((index) =>{
+                    document.querySelector(`#square${index}`).classList.toggle('win');
+                })
+                window.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                }, true);
             };
+            
             changeActivePlayer(activePlayer);
         }
     }

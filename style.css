@@ -49,6 +49,10 @@ body{
     font-size: 3rem;
 }
 
+.win p{
+    color: red;
+}
+
 h2{
     text-align: center;
     font-size: 2rem;
