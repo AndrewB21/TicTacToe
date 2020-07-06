@@ -1,5 +1,3 @@
-
-
 body{
     margin: 0;
     background-color: #fffdd0;
@@ -18,43 +16,94 @@ body{
     text-align: center;
 }
 #board-wrapper{
-    display: grid;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 20vh;
-    grid-template-columns: repeat(3, 175px);
-    grid-template-rows: repeat(3, 175px);
-    width: 525px;
-    height: 525px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 470px;
+    height:520px;
+    margin: auto;
+    position: relative;
+}
+
+.inactive-board{
+    pointer-events: none;
 }
 
 .board-square{
     background-color: #ebe56a;
-    border: 1px solid black;
-    display: flex;
-    align-content: center;
-    justify-content: center;
+    float: left;
+    height: 150px;
+    width: 150px;
+    font-family: sans-serif;
+    font-size: 100px;
+    line-height: 150px;
+    text-align: center;
 }
 
 .board-square:hover{
     background-color: #f2ee8f;
 }
 
-.square-text{
-    color: black;
-    text-align: center;
-    font-size: 3rem;
+#s0, #s1, #s2, #s3, #s4, #s5{
+    border-bottom: solid 10px black;
 }
 
-.win p{
+#s1, #s4, #s7{
+    border-left: solid 10px black;
+    border-right: solid 10px black;
+}
+
+.win{
     color: red;
 }
 
-h2{
+.hidden{
+    visibility: hidden;
+}
+
+#add-players{
+    display: block;
     text-align: center;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    width: 470px;
+    margin: auto;
+}
+
+#reset-btn{
+    position: absolute;
+    width: 200px;
+    margin-top: 10px;
+    bottom: 0;
+    left: 135px;
     font-size: 2rem;
+    pointer-events: auto;
+}
+
+label{
+    display: block;
+}
+
+input{
     color: red;
+    font-size: 2rem;
+    width: 300px;
+    text-align: center;
+}
+
+.mark-select{
+    font-size: 2rem;
+}
+
+.scores{
+    width: 700px;
+    margin: auto;
+    display: flex;
+    font-size: 2rem;
+}
+
+.start-btn{
+    font-size: 2rem;
+}
+
+.p2-score{
+    margin-left: auto;
 }
